@@ -1,0 +1,113 @@
+.nav{
+   
+    height: 60px;
+    width:100%;
+    background-color: black;
+    position: sticky;
+    
+}
+.nav img{
+    width: 50px;
+    height: 55px;
+    padding:5px;
+}
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-left: 15px;
+    height: 60px;
+    color:aliceblue;
+    text-decoration-line: none;
+    list-style-type: none;
+}
+h5{
+    height: 50px;
+    padding-top: 19px !important;
+    padding-left: 3px;
+    color:aliceblue;
+    
+}
+.containe{
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    width: 100%;
+    height: 90px;
+    padding: 10px;
+    flex-direction: column;
+}
+a{
+    text-decoration: none !important;
+    color: aliceblue !important;
+}
+.icon{
+    margin-top: 10px;
+    display: flex;
+    gap: 5px;
+    color: aliceblue; 
+}
+.containe input{
+    width:80%;
+    margin-top: 10px; 
+}
+.hero{
+    color: aliceblue;
+    font-family: 'Varela round', sans-serif;
+    background-color: black;
+    min-height: 75vh;
+    width: 85%;
+    background-image: url(bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 10px auto;
+    border-radius: 20px;
+    padding: 23px;
+    position: sticky;
+}
+    
+.itc{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 45%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.songitem{
+    height: 45px;
+    width: 90%;
+    background-color: aliceblue;
+    border-radius: 34px;
+    color: black;
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
+   padding-left:9px;
+   padding-right:9px;
+}
+.songitem img{
+    width: 43px;
+    border-radius: 24px; 
+}
+.songinfo{
+    color: aliceblue;
+    display: flex;
+    position: absolute;
+    left:15vh;
+    gap:7px;
+}
+.songinfo img{
+    width: 10vh;
+    height: 3vh;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+
+}
