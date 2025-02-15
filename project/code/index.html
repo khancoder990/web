@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="STYLE.CSS">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <title>BOOTSTRAP</title>
+</head>
+<body>
+    
+    <div class="nav ">
+        <img src="logo.png" alt=""><span>
+            <h5>Shopify</h5>
+        </span>
+        <div class="ul ">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Help</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="hero">
+        <div class="songlist">
+            <h2>Best of NCS - No Copy Right Sound</h2>
+        </div>
+        <div class="itc">
+        <div class="songitem">
+            <img src="10.jpg" alt="">
+            <span>Let Me Love You</span>
+            <span class="timestamp">05:34 <i id="1" class="far songItemPlay fa-play-circle"></i> </span>
+        </div>
+        <div class="songitem">
+            <img src="1.jpg" alt="">
+            <span>Let Me Love You</span>
+            <span class="timestamp">05:34 <i id="2" class="far songItemPlay fa-play-circle"></i> </span>
+        </div>
+        <div class="songitem">
+            <img src="2.jpg" alt="">
+            <span>Let Me Love You</span>
+            <span class="timestamp">05:34 <i id="3" class="far songItemPlay fa-play-circle"></i> </span>
+        </div>
+        <div class="songitem">
+            <img src="3.jpg" alt="">
+            <span>Let Me Love You</span>
+            <span class="timestamp">05:34 <i id="4" class="far songItemPlay fa-play-circle"></i> </span>
+        </div>
+        <div class="songitem">
+            <img src="4.jpg" alt="">
+            <span>Let Me Love You</span>
+            <span class="timestamp">05:34 <i id="5" class="far songItemPlay fa-play-circle"></i> </span>
+        </div>
+        <div class="songitem">
+            <img src="5.jpg" alt="">
+            <span>Let Me Love You</span>
+            <span class="timestamp">05:34 <i id="6" class="far songItemPlay fa-play-circle"></i> </span>
+        </div>
+        <div class="songitem">
+            <img src="6.jpg" alt="">
+            <span>Let Me Love You</span>
+            <span class="timestamp">05:34 <i id="7" class="far songItemPlay fa-play-circle"></i> </span>
+        </div>
+        <div class="songitem">
+            <img src="7.jpg" alt="">
+            <span>Let Me Love You</span>
+            <span class="timestamp">05:34 <i id="8" class="far songItemPlay fa-play-circle"></i> </span>
+        </div>
+        <div class="songitem">
+            <img src="8.jpg" alt="">
+            <span>Let Me Love You</span>
+            <span class="timestamp">05:34 <i id="9" class="far songItemPlay fa-play-circle"></i> </span>
+        </div>
+        <div class="songitem">
+            <img src="9.jpg" alt="">
+            <span>Let Me Love You</span>
+            <span class="timestamp">05:34 <i id="10 " class="far songItemPlay fa-play-circle"></i> </span>
+        </div>
+    </div>
+</div>
+    <div class="containe">
+        <input type="range"name="rang"id="range"min="0"max="100" value="0">
+<div class="icon">
+    <i class="fa-solid  fa-3x fa-backward-step"  id="previous"></i>
+    <i class="fa-regular fa-3x  fa-circle-play"  id="ppp"></i>
+    <i class="fa-solid fa-3x fa-forward-step"    id="next"></i>    
+</div>
+<div class="songinfo" >
+    <img src="playing.gif" alt="" id="gif"><span class="masterSongName"  >Let Me love You</span>
+</div>
+    </div>
+    <script  defer> 
+        let audioelement = new Audio('N3X - For You (freetouse.com).mp3');
+        let playbutton = document.getElementById('ppp');
+        let progressbar = document.getElementById('range');
+        let gif = document.getElementById('gif');
+        let songiem= Array.from( document.getElementsByClassName('songitem'));
+        let  masterSongName=document.getElementsByClassName(' masterSongName ' )
+        let songs = [
+    {songName: "Warriyo - Mortal "        ,filePath:"1.mp3"},
+    {songName: "Cielo - Huma-Huma"        ,filePath:"2.mp3"},
+    {songName: "DEAF KEV - Invinciblek"   ,filePath:"3.mp3"},
+    {songName: "Different Heaven"         ,filePath:"4.mp3"},
+    {songName: "Janji-Heroes-Tonight-f"   ,filePath:"5.mp3"},
+    {songName: "Rabba - Salam-e-Ishq"     ,filePath:"6.mp3"},
+    {songName: "Sakhiyaan - Salam-e-Ishq" ,filePath:"7.mp3"},
+    {songName: "Bhula Dena - Salam-e-Ishq",filePath:"8.mp3"},
+    {songName: "Tumhari Kasam "           ,filePath:"9.mp3"},
+    {songName: "Na Jaana - Salam-e-Ishq"  ,filePath:"4.mp3"},
+]
+songiem.forEach((element, i)=>{ 
+element.getElementsByTagName('span')[0].innerHTML=songs[i].songName;
+ });
+        // Click event for play/pause button
+playbutton.addEventListener('click', () => {
+    if (audioelement.paused || audioelement.currentTime <= 0) {
+        audioelement.play();
+        playbutton.classList.remove('fa-circle-play');
+        playbutton.classList.add('fa-circle-pause');
+        gif.style.opacity = 1;
+    } else {
+        audioelement.pause();
+        playbutton.classList.add('fa-circle-play');
+        playbutton.classList.remove('fa-circle-pause');
+        gif.style.opacity = 0;
+    }
+});
+// Spacebar event for play/pause toggle
+document.addEventListener('keydown', (event) => {
+    if (event.code === 'Space') {
+        event.preventDefault(); 
+        if (audioelement.paused || audioelement.currentTime <= 0) {
+            audioelement.play();
+            playbutton.classList.remove('fa-circle-play');
+            playbutton.classList.add('fa-circle-pause');
+            gif.style.opacity = 1;
+        } else {
+            audioelement.pause();
+            playbutton.classList.add('fa-circle-play');
+            playbutton.classList.remove('fa-circle-pause');
+            gif.style.opacity = 0;
+        }
+    }
+});
+
+        audioelement.addEventListener('timeupdate', ()=>{
+        progress = parseInt((audioelement.currentTime/audioelement.duration)* 100); 
+        progressbar.value = progress;
+        });
+        progressbar.addEventListener('change', ()=>{
+        audioelement.currentTime = progressbar.value * audioelement.duration/100;
+        
+})
+const makeAllPlays = ()=>{
+    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+        element.classList.remove('fa-pause-circle');
+        element.classList.add('fa-play-circle');
+    })
+}
+
+Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+    element.addEventListener('click', (e)=>{ 
+        makeAllPlays();
+        songIndex = parseInt(e.target.id);
+        e.target.classList.remove('fa-play-circle');
+        e.target.classList.add('fa-pause-circle');
+        audioelement.src = `${songIndex+1}.mp3`;
+        masterSongName.innerText = songs[songIndex].songName;
+        audioelement.currentTime = 0;
+        audioelement.play();
+        gif.style.opacity = 1;
+        songiem.style.border="2px solid red";
+        playbutton .classList.remove('fa-play-circle');
+        playbutton .classList.add('fa-pause-circle');
+    })
+})
+document.getElementById('next').addEventListener('click', ()=>{
+    if(songIndex>=9){
+        songIndex = 0
+    }
+    else{
+        songIndex += 1;
+    }
+    audioelement.src = ` ${songIndex+1}.mp3`;
+    masterSongName.innerText = songs[songIndex].songName;
+    audioelement.currentTime = 0;
+    audioelement.play();
+    playbutton.classList.remove('fa-play-circle');
+    playbutton.classList.add('fa-pause-circle');
+    songiem.style.border="2px solid red";
+
+})
+
+document.getElementById('previous').addEventListener('click', ()=>{
+    if(songIndex<=0){
+        songIndex = 0
+    }
+    else{
+        songIndex -= 1;
+    }
+    audioelement.src = `  ${songIndex+1}.mp3`;
+    songiem.style.border="2px solid red";
+    masterSongName.innerText = songs[songIndex].songName;
+    audioelement.currentTime = 0;
+    audioelement.play();
+    playbutton .classList.remove('fa-play-circle');
+     playbutton .classList.add('fa-pause-circle');
+     songiem.style.border="2px solid gray";
+})
+    
+    </script>
+
+</body>
+
+</html>
